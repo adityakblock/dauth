@@ -9,22 +9,24 @@ var debug = require('debug')('selfserve:server');
 var http = require('http');
 var https = require('https');
 var fs = require('fs');
-var privateKey = fs.readFileSync( 'private.key' );
-var certificate = fs.readFileSync( 'certificate.crt' );
-var caCert = fs.readFileSync('ca_bundle.crt');
-https.createServer({
-        key: privateKey,
-	cert: certificate,
-	ca : [
-	    caCert
-	]
-}, app).listen(443);
+var privateKey = "adasdasdasdasdasdas"//fs.readFileSync( 'private.key' );
+var certificate = "dsadsadasdasdas" //fs.readFileSync( 'certificate.crt' );
+var caCert = "dsadsadsadsadsadsadsa" //fs.readFileSync('ca_bundle.crt');
+
+//https.createServer({
+//        key: privateKey,
+//	cert: certificate,
+//	ca : [
+//	    caCert
+//	]
+//}, app).listen(443);
 
 /**
  * Get port from environment and store in Express.
  */
 
 var port = normalizePort(process.env.PORT || '80');
+console.log(normalizePort(port));
 app.set('port', port);
 
 /**

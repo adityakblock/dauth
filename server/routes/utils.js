@@ -6,7 +6,7 @@ var config = require("../config");
 var BASE_URL = config.BASE_URL;
 
 var Web3 = require('web3');
-var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+var web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/v3/2c5d4a79b76b40cf8c1e0d540e295870"));
 var contract = web3.eth.contract(config.ABI).at(config.CONTRACT_ADDRESS);
 
 router.get("/login",function(req, res, next){

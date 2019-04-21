@@ -15,14 +15,14 @@ var verifier = require('./routes/verifier');
 var app = express();
 
 var mongoose = require('mongoose');
-
-mongoose.connect("mongodb://localhost/dauth_v0_0_0_a");
-
+console.log("HERE");
+mongoose.connect("mongodb://localhost:27017");
+console.log("HERE2");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+console.log("HERE3");
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -30,8 +30,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+console.log("HERE4");
 app.use('/', index);
+console.log("HERE5");
 app.use('/users', users);
 app.use('/utils',utils);
 app.use('/dauth',dauth);
