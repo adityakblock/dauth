@@ -3,7 +3,7 @@ var router = express.Router();
 var UserModel = require('../models/user');
 var cryptico = require('cryptico');
 
-var BASE_URL = "http://13.127.1.255/"
+var BASE_URL = "https://rinkeby.infura.io/v3/2c5d4a79b76b40cf8c1e0d540e295870/"
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

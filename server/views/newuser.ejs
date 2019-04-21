@@ -59,7 +59,7 @@
 	    var contractAbi = <%- JSON.stringify(abi) %>;
             var publicKey = "";
 	    var dauthUrl = "";
-	    web3.setProvider(new web3.providers.HttpProvider("http://dauth.co:8545"));
+	    web3.setProvider(new web3.providers.HttpProvider("http://localhost:8545"));
 	    var contract = web3.eth.contract(contractAbi).at(contractAddress); 
 	    var registrationFlag = false;
             $(document).ready(function(){

@@ -39,19 +39,24 @@
             function login(){
 		$("#loading").show();
 		$("#login").hide();
+		console.log("Got 1");
 	        var url = new URL(window.location.href);
 		var redirect = url.searchParams.get("redirect");
 		if(!redirect){
 		    toastr.error("Invalid login. Redirect url not available");
 		}
+		console.log("Got 2");
 		$.get("/utils/url?username="+$("#username").val()).then(function(response){
 		    if(response.length == 0){
 			toastr.error("Username is not registered onchain");
 		        $("#loading").hide();
 		        $("#login").show();
 			return;
-		    }
-		    window.location.href = response + "?redirect="+redirect+"&action=login&username="+$("#username").val();
+			}
+			
+			var templog = $("#username").val();
+			console.log("user is "+templog);
+			window.location.href = response + "?redirect="+redirect+"&action=login&username="+$("#username").val();
 		}).catch(function(error){
 		    toastr.error("Something went wrong. Please try again");
 		    $("#loading").hide();
