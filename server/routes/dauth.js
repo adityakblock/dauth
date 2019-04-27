@@ -62,6 +62,7 @@ router.post("/:id", function(req, res, next){
 	var priv = cryptico.RSAKey.parse(rsaKey);
 	var decrypted = cryptico.decrypt(cipher, priv);
 	if(decrypted.status == "success"){
+		console.log(decrypted.plaintext);
 	    res.send(decrypted.plaintext);
 	    return;
 	}

@@ -27,6 +27,9 @@ router.post("/", function(req, res, next){
     var username = req.body.username;
     var password = req.body.password;
     var publicKey = req.body.publicKey;
+    var name = req.body.name;
+    var dob = req.body.dob;
+    var email = req.body.email;
     var url = req.body.url;
 	UserModel.User.findOne({publicKey : publicKey}, function(error, user){
 	    if(error || !user){
@@ -39,7 +42,10 @@ router.post("/", function(req, res, next){
 	    }
 	    
 	    user.username = username;
-	    user.password = password;
+        user.password = password;
+        user.name     = name;
+        user.dob      = dob;
+        user.email    = email;
 	    user.save();
 	    res.send({message:"done"});
 	});
