@@ -15,7 +15,7 @@ var app = express();
 
 var mongoose = require("mongoose");
 console.log("HERE");
-mongoose.connect("mongodb://localhost:27017");
+mongoose.connect("mongodb+srv://adigupta:adi.gupta13@dauthserver-qjt20.mongodb.net/test?retryWrites=true");
 console.log("HERE2");
 
 // view engine setup
